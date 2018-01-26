@@ -24,18 +24,18 @@ def populate():
          "url":"http://www.tangowithdjango.com/"}
     ]
     other_pages = [
-        {"title":"Bottle",
+        {"title":"Bottle test",
          "url":"http://bottlepy.org/docs/dev/"},
         {"title":"Flask",
          "url":"http://flask.pocoo.org"}
     ]
 
-    cats = {"Python": {"pages": python_pages},
-            "Django": {"pages": django_pages},
-            "Other Frameworks": {"pages": other_pages}
+    cats = {"Python": {"pages": python_pages, "views": 0, "likes": 0},
+            "Django": {"pages": django_pages, "views": 0, "likes": 0},
+            "Other Frameworks": {"pages": other_pages, "views": 0, "likes": 0}
             }
     for cat, cat_data in cats.items():
-        c = add_cat(cat)
+        c = add_cat(cat, 0, 0)
         for p in cat_data["pages"]:
             add_page(c, p["title"], p["url"])
 
@@ -50,7 +50,7 @@ def add_page(cat, title, url, views=0):
     p.save()
     return p
 
-def add_cat(name):
+def add_cat(name, views, likes):
     c = Category.objects.get_or_create(name=name)[0]
     c.save()
     return c
