@@ -20,11 +20,11 @@ def populate():
          "url":"https://docs.djangoproject.com/en/1.9/intro/tutorial01/"},
         {"title":"Django Rocks",
          "url":"http://www.djangorocks.com/"},
-        {"title":"How to tango with django",
+        {"title":"How to Tango with Django",
          "url":"http://www.tangowithdjango.com/"}
     ]
     other_pages = [
-        {"title":"Bottle test",
+        {"title":"Bottle",
          "url":"http://bottlepy.org/docs/dev/"},
         {"title":"Flask",
          "url":"http://flask.pocoo.org"}
