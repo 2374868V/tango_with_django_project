@@ -69,5 +69,7 @@ def add_cat(name, views, likes):
 
 if __name__ == '__main__':
     print("Starting Rango population script...")
+    cat = Category(name="hoi")
+    cat.save()
     populate()
 
